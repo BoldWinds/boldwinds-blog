@@ -1,0 +1,42 @@
+---
+import { getCollection } from "astro:content";
+import PublicationSnippet from "../../components/PublicationSnippet.astro";
+import Section from "../../components/common/Section.astro";
+import Layout from "../../layouts/Layout.astro";
+import { getConfigurationCollection } from "../../lib/utils";
+
+const publications = (await getCollection("publication")).sort(
+  (a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf(),
+);
+const { data: config } = await getConfigurationCollection();
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>论文 • {config.personal.name}</title>
+    <meta name="description" content="论文、预印本与技术报告列表。" />
+    <meta property="og:title" content={`论文 • ${config.personal.name}`} />
+    <meta property="og:description" content="论文、预印本与技术报告列表。" />
+    <meta property="og:url" content={`${config.site.baseUrl}/publications`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`论文 • ${config.personal.name}`} />
+    <meta name="twitter:description" content="论文、预印本与技术报告列表。" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
+    <link rel="canonical" href={`${config.site.baseUrl}/publications`} />
+  </Fragment>
+  <Section class="py-4 my-8">
+    <div class="flex items-center gap-4 pt-8 pb-16">
+      <h1 class="font-display text-3xl sm:text-4xl leading-loose">论文</h1>
+    </div>
+    <ul>
+      {
+        publications.map((publication) => (
+          <li>
+            <PublicationSnippet {...publication.data} />
+          </li>
+        ))
+      }
+    </ul>
+  </Section>
+</Layout>

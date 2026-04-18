@@ -234,10 +234,38 @@ const configuration = defineCollection({
       home: z.string().default("/"),
       projects: z.string().default("/projects"),
       blog: z.string().default("/blog"),
-      /** Add other menu items here **/
+      publications: z.string().default("/publications"),
+      about: z.string().default("/about"),
     }),
   }),
 });
+
+const publication = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./content/publications" }),
+  schema: z
+    .object({
+      title: z.string(),
+      slug: z.string().optional(),
+      authors: z.array(z.string()),
+      venue: z.string(),
+      status: z.string(),
+      year: z.number(),
+      paperUrl: z.url(),
+      codeUrl: z.url().optional(),
+      abstract: z.string(),
+      timestamp: z.date().transform((val) => new Date(val)),
+    })
+    .transform((data) => ({
+      ...data,
+      slug:
+        data.slug ??
+        data.title
+          .toLowerCase()
+          .replace(/\s+/g, "-")
+          .replace(/[^\w-]/g, ""),
+    })),
+});
+
 
 /**
  * Loader and schema for the blog collection.
@@ -380,4 +408,4 @@ const project = defineCollection({
     }),
 });
 
-export const collections = { blog, project, configuration };
+export const collections = { blog, project, publication, configuration };

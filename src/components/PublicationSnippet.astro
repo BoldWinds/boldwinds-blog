@@ -1,0 +1,35 @@
+---
+import type { PublicationFrontmatter } from "../lib/types";
+
+type Props = PublicationFrontmatter;
+
+const { title, authors, venue, status, year, paperUrl, codeUrl, abstract } = Astro.props;
+---
+
+<div class="relative flex flex-col gap-3 mb-8 hover-zag-dotted-grid">
+  <a
+    href={paperUrl}
+    class="text-xl underline underline-offset-6"
+    target="_blank"
+    rel="noreferrer"
+  >
+    {title}
+  </a>
+  <p class="zag-muted">{authors.join(" / ")}</p>
+  <p>{venue} · {status} · {year}</p>
+  <p class="zag-text zag-transition">{abstract}</p>
+  {
+    codeUrl ? (
+      <div>
+        <a
+          href={codeUrl}
+          class="text-base underline underline-offset-6"
+          target="_blank"
+          rel="noreferrer"
+        >
+          代码
+        </a>
+      </div>
+    ) : null
+  }
+</div>

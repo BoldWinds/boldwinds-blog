@@ -7,3 +7,5 @@ export type ArticleFrontmatter = CollectionEntry<"blog">["data"] & {
 export type ProjectFrontmatter = CollectionEntry<"project">["data"] & {
   url: string;
 };
+
+export type PublicationFrontmatter = CollectionEntry<"publication">["data"];
