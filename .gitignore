@@ -23,4 +23,7 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+# local worktrees
+.worktrees/
+
 pnpm-lock.yaml
