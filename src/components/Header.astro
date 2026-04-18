@@ -4,6 +4,13 @@ import Anchor from "./common/Anchor.astro";
 import ThemeToggle from "./ThemeToggle.astro";
 
 const { data: config } = await getConfigurationCollection();
+const navItems = [
+  { label: "首页", url: config.menu.home },
+  { label: "博客", url: config.menu.blog },
+  { label: "项目", url: config.menu.projects },
+  { label: "论文", url: config.menu.publications },
+  { label: "关于", url: config.menu.about },
+];
 ---
 
 <header class="zag-bg zag-border-b zag-transition sticky top-0 w-full z-10">
@@ -30,8 +37,8 @@ const { data: config } = await getConfigurationCollection();
       class="flex flex-col font-mono font-medium gap-4 sm:flex-row px-4 sm:px-0 mt-16 sm:mt-0"
     >
       {
-        Object.entries(config.menu).map((i) => (
-          <Anchor url={i[1]}>{i[0]}</Anchor>
+        navItems.map((item) => (
+          <Anchor url={item.url}>{item.label}</Anchor>
         ))
       }
     </div>

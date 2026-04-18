@@ -2,56 +2,58 @@
 # we need to prefix all configuration keys with an underscore.
 
 [_.site]
-baseUrl = "http://zaggonaut.dev"
+baseUrl = "https://example.com"
 
 [_.globalMeta]
-title = "Zaggonaut"
-description = "Retro-Inspired Theme & Built for Astro"
-longDescription = "Zaggonaut is a retro-inspired theme for Astro, built using TypeScript, TailwindCSS, and Astro."
-cardImage = "https://zaggonaut.dev/michael-dam-unsplash.webp"
-keywords = ["web development", "design", "technology"]
+title = "个人技术站"
+description = "聚焦 AI Infra、分布式训练、推理与算子开发的技术博客与项目网站。"
+longDescription = "个人技术网站，记录 AI 基础设施、分布式训练、推理优化与算子开发相关的文章、项目与论文。"
+cardImage = "https://example.com/zaggonaut.png"
+keywords = ["AI Infra", "分布式训练", "推理优化", "算子开发", "技术博客"]
 
 [_.blogMeta]
-title = "Zaggonaut Blog"
-description = "Practical wisdom, unfiltered thoughts, and hot takes."
-longDescription = "Web development, tech trends, and the occasional programming mishap."
-cardImage = "https://zaggonaut.dev/michael-dam-unsplash.webp"
-keywords = ["web development", "design", "technology"]
+title = "博客"
+description = "关于 AI Infra、训练系统、推理优化与工程实践的文章。"
+longDescription = "记录分布式训练、推理系统与底层性能优化的技术文章。"
+cardImage = "https://example.com/zaggonaut.png"
+keywords = ["AI Infra", "分布式训练", "推理", "算子开发"]
 
 [_.projectMeta]
-title = "Zaggonaut Projects"
-description = "A list of my web development projects and developer tools."
-longDescription = "All of my projects, including both frontend and full-stack applications."
-cardImage = "https://zaggonaut.dev/michael-dam-unsplash.webp"
-keywords = ["web development", "design", "technology"]
+title = "项目"
+description = "围绕训练、推理与系统工程的项目与实验。"
+longDescription = "展示与 AI 基础设施、训练效率、推理优化和算子工程相关的项目实践。"
+cardImage = "https://example.com/zaggonaut.png"
+keywords = ["训练系统", "推理优化", "系统工程", "项目展示"]
 
 [_.notFoundMeta]
-title = "Zaggonaut 404"
-description = "The page you are looking for does not exist."
-longDescription = "The page you are looking for does not exist. Maybe it never existed. Spooky."
-cardImage = "https://zaggonaut.dev/michael-dam-unsplash.webp"
+title = "页面不存在"
+description = "你访问的页面不存在。"
+longDescription = "抱歉，你访问的页面不存在，可能已被移动或删除。"
+cardImage = "https://example.com/zaggonaut.png"
 
 [_.hero]
-title = "Zaggonaut"
-subtitle = "Retro-Inspired Theme &<br />Built for Astro"
-image = "https://zaggonaut.dev/michael-dam-unsplash.webp"
-ctaText = "View Projects"
+title = "个人技术站"
+subtitle = "AI Infra /<br />分布式训练 / 推理 / 算子开发"
+image = "https://example.com/michael-dam-unsplash.webp"
+ctaText = "查看项目"
 ctaUrl = "/projects"
 
 [_.personal]
-name = "Zaggonaut"
-githubProfile = "https://github.com/RATIU5/zaggonaut"
-twitterProfile = "https://twitter.com"
-linkedinProfile = "https://linkedin.com/"
+name = "Your Name"
+githubProfile = "https://github.com/your-handle"
+twitterProfile = "https://twitter.com/your-handle"
+linkedinProfile = "https://www.linkedin.com/in/your-handle/"
 
 [_.texts]
-articlesName = "Articles"
-projectsName = "Projects"
-viewAll = "View All"
-noArticles = "No articles found."
-noProjects = "No projects found."
+articlesName = "精选文章"
+projectsName = "精选项目"
+viewAll = "查看全部"
+noArticles = "暂无文章。"
+noProjects = "暂无项目。"
 
 [_.menu]
 home = "/"
-projects = "/projects"
 blog = "/blog"
+projects = "/projects"
+publications = "/publications"
+about = "/about"
