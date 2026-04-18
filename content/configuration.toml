@@ -2,47 +2,47 @@
 # we need to prefix all configuration keys with an underscore.
 
 [_.site]
-baseUrl = "https://example.com"
+baseUrl = "https://boldwinds.top"
 
 [_.globalMeta]
-title = "个人技术站"
-description = "聚焦 AI Infra、分布式训练、推理与算子开发的技术博客与项目网站。"
-longDescription = "个人技术网站，记录 AI 基础设施、分布式训练、推理优化与算子开发相关的文章、项目与论文。"
-cardImage = "https://example.com/zaggonaut.png"
+title = "刘博文｜AI Infra / 分布式训练 / 推理优化 / 算子开发"
+description = "刘博文的个人技术网站，记录训练系统、推理优化、算子实现与 AI 基础设施相关的文章、项目与论文。"
+longDescription = "Bowen Liu 的个人技术网站，聚焦分布式训练、推理优化、算子开发与 AI 基础设施工程实践，内容涵盖技术文章、项目记录与论文整理。"
+cardImage = "https://boldwinds.top/zaggonaut.png"
 keywords = ["AI Infra", "分布式训练", "推理优化", "算子开发", "技术博客"]
 
 [_.blogMeta]
 title = "博客"
 description = "关于 AI Infra、训练系统、推理优化与工程实践的文章。"
 longDescription = "记录分布式训练、推理系统与底层性能优化的技术文章。"
-cardImage = "https://example.com/zaggonaut.png"
+cardImage = "https://boldwinds.top/zaggonaut.png"
 keywords = ["AI Infra", "分布式训练", "推理", "算子开发"]
 
 [_.projectMeta]
 title = "项目"
 description = "围绕训练、推理与系统工程的项目与实验。"
 longDescription = "展示与 AI 基础设施、训练效率、推理优化和算子工程相关的项目实践。"
-cardImage = "https://example.com/zaggonaut.png"
+cardImage = "https://boldwinds.top/zaggonaut.png"
 keywords = ["训练系统", "推理优化", "系统工程", "项目展示"]
 
 [_.notFoundMeta]
 title = "页面不存在"
 description = "你访问的页面不存在。"
 longDescription = "抱歉，你访问的页面不存在，可能已被移动或删除。"
-cardImage = "https://example.com/zaggonaut.png"
+cardImage = "https://boldwinds.top/zaggonaut.png"
 
 [_.hero]
-title = "个人技术站"
-subtitle = "AI Infra /<br />分布式训练 / 推理 / 算子开发"
-image = "https://example.com/michael-dam-unsplash.webp"
+title = "刘博文 / Bowen Liu"
+subtitle = "AI Infra / 分布式训练 / 推理优化 / 算子开发<br />关注训练系统效率、推理性能与底层工程实现"
+image = "https://boldwinds.top/michael-dam-unsplash.webp"
 ctaText = "查看项目"
 ctaUrl = "/projects"
 
 [_.personal]
-name = "Your Name"
-githubProfile = "https://github.com/your-handle"
-twitterProfile = "https://twitter.com/your-handle"
-linkedinProfile = "https://www.linkedin.com/in/your-handle/"
+name = "刘博文 / Bowen Liu"
+githubProfile = "https://github.com/BoldWinds"
+twitterProfile = "https://twitter.com/BoldWinds"
+linkedinProfile = "https://www.linkedin.com/in/博文-刘-813056291"
 
 [_.texts]
 articlesName = "精选文章"
