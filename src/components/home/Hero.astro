@@ -3,24 +3,64 @@
 import { getConfigurationCollection } from "../../lib/utils";
 
 const { data: config } = await getConfigurationCollection();
+
+const birthDate = new Date(`${config.hero.birthDate}T00:00:00+08:00`);
+const now = new Date();
+let age = now.getFullYear() - birthDate.getFullYear();
+const hasHadBirthdayThisYear =
+  now.getMonth() > birthDate.getMonth() ||
+  (now.getMonth() === birthDate.getMonth() &&
+    now.getDate() >= birthDate.getDate());
+
+if (!hasHadBirthdayThisYear) {
+  age -= 1;
+}
+
+const birthDateText = config.hero.birthDate.replace(/-/g, ".");
 ---
 
-<div class="flex flex-col items-center sm:flex-row gap-8">
-  <img
-    src={config.hero.image}
-    alt={`${config.hero.title} 头像`}
-    class="rounded-full max-w-40 w-40 h-40 mb-4 z-0 grayscale"
-  />
-  <div>
-    <h1
-      class="text-3xl sm:text-4xl font-display font-semibold opsz text-center sm:text-left"
-    >
-      {config.hero.title}
-    </h1>
-    <h2
-      class="text-center text-xl sm:text-2xl font-mono font-medium sm:text-left"
-    >
-      <p set:html={config.hero.subtitle}/>
-    </h2>
+<div class="space-y-10">
+  <div class="flex flex-col items-center gap-8 sm:flex-row sm:items-center">
+    <img
+      src={config.hero.image}
+      alt={`${config.hero.title} 头像`}
+      class="h-40 w-40 rounded-full object-cover"
+    />
+
+    <div class="text-center sm:text-left">
+      <p class="font-display text-3xl font-semibold opsz sm:text-4xl">
+        {config.hero.title}
+      </p>
+      <p class="mt-2 whitespace-nowrap font-mono text-xl font-medium sm:text-2xl">
+        {config.hero.subtitle}
+      </p>
+      <p class="mt-4 text-base leading-8 sm:text-lg">
+        {birthDateText} / {age}岁
+      </p>
+    </div>
+  </div>
+
+  <div class="space-y-8 text-left">
+    <section class="space-y-4">
+      <h2 class="text-lg font-semibold sm:text-xl">{config.hero.educationTitle}</h2>
+      <div class="space-y-4">
+        <div class="flex items-start gap-3">
+          <img src={config.hero.bitIcon} alt="北京理工大学校徽" class="mt-1 h-8 w-8 object-contain" />
+          <p class="leading-7 sm:text-lg">{config.hero.undergraduate}</p>
+        </div>
+        <div class="flex items-start gap-3">
+          <img src={config.hero.bitIcon} alt="北京理工大学校徽" class="mt-1 h-8 w-8 object-contain" />
+          <p class="leading-7 sm:text-lg">{config.hero.masters}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="space-y-4">
+      <h2 class="text-lg font-semibold sm:text-xl">{config.hero.workTitle}</h2>
+      <div class="flex items-start gap-3">
+        <img src={config.hero.bytedanceIcon} alt="字节跳动标志" class="mt-1 h-8 w-8 object-contain" />
+        <p class="leading-7 sm:text-lg">{config.hero.workExperience}</p>
+      </div>
+    </section>
   </div>
 </div>

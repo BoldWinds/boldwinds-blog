@@ -1,67 +1,88 @@
-![Zaggonaut, a retro-inspired theme for Astro.](./images/README.png)
+# boldwinds-blog
 
-Zaggonaut is a retro-inspired black & white theme for Astro, built using TypeScript, TailwindCSS, and of course, Astro.
+Bowen Liu（刘博文）的个人技术网站仓库，用于承载个人主页、技术博客、项目展示与论文展示内容。
 
-> [!NOTE]  
-> Introducing Zaggonaut 2.0!
-> This is a complete rewrite of the internal content layer, making use of Astro's new Content Collections feature, among other enhancements.
+## 站点内容
 
-If you are looking for the original Zaggonaut theme, you can find it [on the v1 branch](https://github.com/RATIU5/zaggonaut/tree/v1).
+- 首页：个人简介与精选内容入口
+- 博客：技术文章与工程实践记录
+- 项目：训练、推理与系统工程相关项目展示
+- Publications：论文、预印本或技术报告列表
+- About：固定个人介绍页面
 
-## Getting Started
+## 技术栈
 
-[View the demo](https://zaggonaut.dev) or [view the source code](https://github.com/RATIU5/zaggonaut).
+- Astro 6
+- Tailwind CSS 4
+- TypeScript 风格的 Astro 组件与内容集合
+- Biome（格式化 / lint）
+- npm
 
-Alternatively, you can create a new Astro project with Zaggonaut like this:
+## 工具链版本
+
+- Node.js: 22.x
+- npm: 使用仓库当前 `package-lock.json`
+
+## 目录说明
+
+- `src/`：页面、组件、布局
+- `content/configuration.toml`：站点全局配置与首页 hero 内容
+- `content/blogs/`：博客文章内容
+- `content/projects/`：项目内容
+- `content/publications/`：论文/出版物内容
+- `public/`：静态资源
+
+## 本地开发
+
+安装依赖：
 
 ```bash
-# pnpm
-pnpm create astro@latest --template RATIU5/zaggonaut
+npm install
 ```
 
-> [!IMPORTANT]  
-> Currently, `pnpm` is the only supported package manager due to `pnpm` throwing peer-dependency conflicts.
+启动开发服务器：
 
-## Features
+```bash
+npm run dev
+```
 
-- Content Collections
-- Dark & light mode
-- Customizable colors
-- 100 / 100 Lighthouse score
-- Fully accessible
-- Fully responsive
-- Type-safe
-- SEO-friendly
+构建生产版本：
 
-## Customization
+```bash
+npm run build
+```
 
-The entire theme is fully customizable. The theme is setup a specific way to make it easy to customize.
+本地预览生产构建：
 
-### Colors
+```bash
+npm run preview
+```
 
-You can customize the colors of the theme by editing the `src/styles/global.css` file.
-This file uses Tailwind CSS and CSS variables to customize the colors of the theme.
-Zaggonaut uses the following CSS variables:
+## 代码质量
 
-- `--color-zag-dark`: The dark color of the theme
-- `--color-zag-light`: The light color of the theme
-- `--color-zag-dark-muted`: The dark color of the theme with a slight opacity
-- `--color-zag-light-muted`: The light color of the theme with a slight opacity
-- `--color-zag-accent-light`: The light accent color of the theme
-- `--color-zag-accent-light-muted`: The light accent color of the theme with a slight opacity
-- `--color-zag-accent-dark`: The dark accent color of the theme
-- `--color-zag-accent-dark-muted`: The dark accent color of the theme with a slight opacity
+格式化：
 
-### Content Customization
+```bash
+npm run format
+```
 
-95% of the content you'll want to customize will be located inside the `content` directory. Let's break down the specific files/directories you may want to edit:
+Lint：
 
-- `content/configuration.toml`: This file contains the site configuration, such as metadata, social links, and text content.
+```bash
+npm run lint
+```
 
-- `content/blogs/`: This directory contains your blog posts. Each post is a Markdown file with metadata in the frontmatter at the top.
+## 部署
 
-- `content/projects/`: This directory contains your projects. Each project is a Markdown file also with metadata in the frontmatter.
+当前部署目标为 Vercel。
 
-## Ready To Try?
+建议配置：
 
-Check out [the theme website](https://zaggonaut.dev) to give it a spin!
+- Install Command: `npm install`
+- Build Command: `npm run build`
+- Output Directory: `dist`
+- Node.js Version: `22.x`
+
+## 说明
+
+这个仓库最初基于 Zaggonaut Astro 主题进行定制，但当前 README 说明的是本仓库本身，而不是上游主题模板。

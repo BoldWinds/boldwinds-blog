@@ -153,12 +153,12 @@ const configuration = defineCollection({
       /**
        * The subtitle displayed in the hero section.
        */
-      subtitle: z.string().default("Retro-Inspired Theme &<br>Built for Astro"),
+      subtitle: z.string().default("Built for Astro"),
 
       /**
-       * The URL of the hero image, used as a background image in the hero section.
+       * The hero image path or URL.
        */
-      image: z.url().optional(),
+      image: z.string().default("/zaggonaut.png"),
 
       /**
        * The text displayed in the call-to-action button in the hero section.
@@ -169,6 +169,46 @@ const configuration = defineCollection({
        * The URL of the call-to-action button in the hero section.
        */
       ctaUrl: z.string().default("/projects"),
+
+      /**
+       * Birth date used to render age in the hero section.
+       */
+      birthDate: z.string().default("2000-01-01"),
+
+      /**
+       * Education section title shown below the top profile row.
+       */
+      educationTitle: z.string().default("Education"),
+
+      /**
+       * Work section title shown below the top profile row.
+       */
+      workTitle: z.string().default("Work"),
+
+      /**
+       * BIT icon path used for education rows.
+       */
+      bitIcon: z.string().default("/images/bit-emblem.png"),
+
+      /**
+       * ByteDance icon path used for work rows.
+       */
+      bytedanceIcon: z.string().default("/images/bytedance-logo.png"),
+
+      /**
+       * Undergraduate education summary shown in the hero section.
+       */
+      undergraduate: z.string().default(""),
+
+      /**
+       * Master's education summary shown in the hero section.
+       */
+      masters: z.string().default(""),
+
+      /**
+       * Work experience summary shown in the hero section.
+       */
+      workExperience: z.string().default(""),
     }),
 
     /**
