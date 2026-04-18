@@ -1,0 +1,77 @@
+---
+import Section from "../components/common/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import { getConfigurationCollection } from "../lib/utils";
+
+const { data: config } = await getConfigurationCollection();
+const skills = [
+  "PyTorch",
+  "CUDA",
+  "Distributed Training",
+  "Inference",
+  "Operator Development",
+  "Systems Optimization",
+];
+const interests = ["训练系统", "推理优化", "算子实现", "性能分析", "工程可观测性"];
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>关于 • {config.personal.name}</title>
+    <meta name="description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta property="og:title" content={`关于 • ${config.personal.name}`} />
+    <meta property="og:description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta property="og:url" content={`${config.site.baseUrl}/about`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`关于 • ${config.personal.name}`} />
+    <meta name="twitter:description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
+    <link rel="canonical" href={`${config.site.baseUrl}/about`} />
+  </Fragment>
+
+  <Section class="py-4 my-8">
+    <div class="flex items-center gap-4 pt-8 pb-16">
+      <h1 class="font-display text-3xl sm:text-4xl leading-loose">关于</h1>
+    </div>
+
+    <div class="flex flex-col gap-10 leading-8">
+      <section>
+        <h2 class="text-xl font-semibold mb-3">背景</h2>
+        <p>
+          目前聚焦 AI Infra、分布式训练、推理与算子开发方向，关注系统效率、工程稳定性与性能优化。
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-3">教育经历</h2>
+        <p>北京理工大学，本科及硕士阶段学习与研究经历。</p>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-3">技能栈</h2>
+        <ul class="flex flex-wrap gap-2">
+          {
+            skills.map((skill) => (
+              <li class="-zag-text -zag-bg zag-transition px-2 py-1 text-sm font-semibold">
+                {skill}
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-3">研究兴趣</h2>
+        <ul class="list-disc pl-6">
+          {interests.map((interest) => <li>{interest}</li>)}
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl font-semibold mb-3">联系方式</h2>
+        <p>可通过 GitHub 与 LinkedIn 联系，后续可补充邮箱等公开联系方式。</p>
+      </section>
+    </div>
+  </Section>
+</Layout>
