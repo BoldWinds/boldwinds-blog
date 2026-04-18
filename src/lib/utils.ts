@@ -19,12 +19,12 @@ export const getShortDescription = (content: string, maxLength = 20) => {
  * @param timestamp the timestamp to process
  * @returns a string representing the processed timestamp
  */
-export const processArticleDate = (date: Date) => {
-  const monthSmall = date.toLocaleString("default", { month: "short" });
-  const day = date.getDate();
-  const year = date.getFullYear();
-  return `${monthSmall} ${day}, ${year}`;
-};
+export const processArticleDate = (date: Date) =>
+  new Intl.DateTimeFormat("zh-CN", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  }).format(date);
 
 let configCache: CollectionEntry<"configuration"> | null = null;
 

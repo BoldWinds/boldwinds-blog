@@ -9,18 +9,20 @@ import { getConfigurationCollection } from "../lib/utils";
 
 const { data: config } = await getConfigurationCollection();
 
-const featuredProjects = (
-	await getCollection("project", (e) => e.data.featured)
-).map((e) => ({
-	...e.data,
-  url: `/projects/${e.data.slug}`,
-}));
-const featuredArticles = (
-	await getCollection("blog", (e) => e.data.featured)
-).map((e) => ({
-	...e.data,
-  url: `/blog/${e.data.slug}`,
-}));
+const featuredProjects = (await getCollection("project"))
+  .sort((a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf())
+  .slice(0, 3)
+  .map((e) => ({
+    ...e.data,
+    url: `/projects/${e.data.slug}`,
+  }));
+const featuredArticles = (await getCollection("blog"))
+  .sort((a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf())
+  .slice(0, 3)
+  .map((e) => ({
+    ...e.data,
+    url: `/blog/${e.data.slug}`,
+  }));
 ---
 
 <Layout>
@@ -51,8 +53,8 @@ const featuredArticles = (
     {config.globalMeta.cardImage && (
       <meta name="twitter:image" content={config.globalMeta.cardImage} />
     )}
-    <meta http-equiv="content-language" content="en" />
-    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
     <link rel="canonical" href={config.site.baseUrl} />
   </Fragment>
   <Section class="my-16">

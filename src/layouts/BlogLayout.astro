@@ -49,8 +49,8 @@ const { data: config } = await getConfigurationCollection();
         <meta name="twitter:image" content={frontmatter.cardImage} />
       )
     }
-    <meta http-equiv="content-language" content="en" />
-    <meta name="language" content="English" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
     <link
       rel="canonical"
       href={`${config.site.baseUrl}/blog/${frontmatter.slug}`}
@@ -65,7 +65,7 @@ const { data: config } = await getConfigurationCollection();
       </h1>
       <div class="flex justify-between">
         <span>{articleDate}</span>
-        <span>{frontmatter.readTime} min</span>
+        <span>{frontmatter.readTime} 分钟</span>
       </div>
     </div>
     <Prose>
