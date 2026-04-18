@@ -43,16 +43,16 @@
   --font-serif:
     "Literata Variable", ui-serif, Georgia, Cambria, "Times New Roman", Times,
     serif;
-  --color-zag-dark: var(--color-neutral-900);
-  --color-zag-dark-opaque: oklch(from var(--color-neutral-900) l c h / 0.5);
-  --color-zag-light: var(--color-neutral-100);
-  --color-zag-light-opaque: oklch(from var(--color-neutral-100) l c h / 0.5);
-  --color-zag-dark-muted: var(--color-neutral-600);
-  --color-zag-light-muted: var(--color-neutral-400);
-  --color-zag-accent-light: var(--color-emerald-400);
-  --color-zag-accent-light-muted: var(--color-emerald-300);
-  --color-zag-accent-dark: var(--color-emerald-600);
-  --color-zag-accent-dark-muted: var(--color-emerald-800);
+  --color-zag-dark: oklch(0.18 0.02 255);
+  --color-zag-dark-opaque: oklch(0.18 0.02 255 / 0.5);
+  --color-zag-light: oklch(0.97 0.01 255);
+  --color-zag-light-opaque: oklch(0.97 0.01 255 / 0.5);
+  --color-zag-dark-muted: oklch(0.42 0.02 255);
+  --color-zag-light-muted: oklch(0.75 0.015 255);
+  --color-zag-accent-light: oklch(0.72 0.11 240);
+  --color-zag-accent-light-muted: oklch(0.8 0.06 240);
+  --color-zag-accent-dark: oklch(0.55 0.09 240);
+  --color-zag-accent-dark-muted: oklch(0.34 0.05 240);
 }
 
 @layer base {
@@ -148,8 +148,8 @@
   .hover-zag-dotted-grid:hover::before {
     --dot-bg: var(--color-zag-light);
     --dot-color: var(--color-zag-dark-muted);
-    --dot-size: 1.5px;
-    --dot-space: 16px;
+    --dot-size: 1px;
+    --dot-space: 20px;
     content: "";
     position: absolute;
     top: 0;
