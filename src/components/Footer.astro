@@ -96,6 +96,24 @@ const year = date.getFullYear();
             </Anchor>
           )
         }
+        {
+          config.personal.email && (
+            <Anchor url={`mailto:${config.personal.email}`} aria-label={`${config.personal.name} Email`}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+              >
+                <title>Email</title>
+                <path
+                  class="zag-fill zag-transition"
+                  d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zm0 2v.51l9 6.75l9-6.75V7l-9 6.75L3 7zm18 10V9.99l-8.4 6.3a1 1 0 0 1-1.2 0L3 9.99V17h18z"
+                />
+              </svg>
+            </Anchor>
+          )
+        }
       </div>
     </div>
   </Section>

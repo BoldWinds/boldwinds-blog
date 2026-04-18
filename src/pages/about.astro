@@ -5,27 +5,18 @@ import Layout from "../layouts/Layout.astro";
 import { getConfigurationCollection } from "../lib/utils";
 
 const { data: config } = await getConfigurationCollection();
-const skills = [
-  "PyTorch",
-  "CUDA",
-  "Distributed Training",
-  "Inference",
-  "Operator Development",
-  "Systems Optimization",
-];
-const interests = ["训练系统", "推理优化", "算子实现", "性能分析", "工程可观测性"];
 ---
 
 <Layout>
   <Fragment slot="head">
     <title>关于 • {config.personal.name}</title>
-    <meta name="description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta name="description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta property="og:title" content={`关于 • ${config.personal.name}`} />
-    <meta property="og:description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta property="og:description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta property="og:url" content={`${config.site.baseUrl}/about`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`关于 • ${config.personal.name}`} />
-    <meta name="twitter:description" content="个人背景、方向、技能栈与研究兴趣。" />
+    <meta name="twitter:description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta http-equiv="content-language" content="zh-CN" />
     <meta name="language" content="Chinese" />
     <link rel="canonical" href={`${config.site.baseUrl}/about`} />
@@ -37,49 +28,13 @@ const interests = ["训练系统", "推理优化", "算子实现", "性能分析
     </div>
 
     <div class="flex flex-col gap-10 leading-8">
-      <section>
-        <h2 class="text-xl font-semibold mb-3">背景</h2>
-        <p>
-          我是刘博文（Bowen Liu），目前主要关注 AI Infra、分布式训练、推理优化与算子开发相关工作。相比泛泛而谈的“系统优化”，我更关心训练与推理链路中那些真正影响性能、稳定性与资源利用率的问题，以及这些问题在工程实现层面如何被定位、分析和解决。
-        </p>
-      </section>
+      <div class="space-y-4 text-lg sm:text-xl">
+        <p>人生不仅仅有工作和学习，我是:</p>
+        <p>重度游戏爱好者，喜爱 MOBA、FPS、ARPG、ACT、Rougelike 类型游戏。</p>
+        <p>whiskey / cocktail 品鉴者，尤其中意 Negroni。</p>
+        <p>健身小白。</p>
+      </div>
 
-      <section>
-        <h2 class="text-xl font-semibold mb-3">教育经历</h2>
-        <p>北京理工大学。本科及硕士阶段的学习与研究经历，持续塑造了我对系统问题、工程实现和性能分析的兴趣。</p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold mb-3">技能栈</h2>
-        <ul class="flex flex-wrap gap-2">
-          {
-            skills.map((skill) => (
-              <li class="-zag-text -zag-bg zag-transition px-2 py-1 text-sm font-semibold">
-                {skill}
-              </li>
-            ))
-          }
-        </ul>
-        <p class="mt-4">
-          这些技术主要用于训练系统、推理服务、算子实现以及性能分析相关的工程场景。
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold mb-3">研究兴趣</h2>
-        <p>
-          我更感兴趣的不是抽象的问题定义，而是具体系统里的性能瓶颈与实现边界，例如大规模训练中的吞吐与通信开销、推理路径中的延迟与资源效率、算子与后端实现的性能差异，以及工程可观测性和诊断能力如何真正帮助定位问题。
-        </p>
-      </section>
-
-      <section>
-        <h2 class="text-xl font-semibold mb-3">联系方式</h2>
-        <p>
-          GitHub：<a href="https://github.com/BoldWinds" class="underline underline-offset-6" target="_blank" rel="noreferrer">BoldWinds</a>
-          · LinkedIn：<a href="https://www.linkedin.com/in/博文-刘-813056291" class="underline underline-offset-6" target="_blank" rel="noreferrer">刘博文</a>
-          · 邮箱：<a href="mailto:whateverlbw@gmail.com" class="underline underline-offset-6">whateverlbw@gmail.com</a>
-        </p>
-      </section>
     </div>
   </Section>
 </Layout>

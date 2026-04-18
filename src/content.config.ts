@@ -221,6 +221,11 @@ const configuration = defineCollection({
       name: z.string().default("Zaggonaut"),
 
       /**
+       * The email address of the site owner or author.
+       */
+      email: z.string().email().optional(),
+
+      /**
        * The GitHub profile URL of the site owner or author.
        */
       githubProfile: z.url().optional(),

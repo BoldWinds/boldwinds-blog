@@ -5,7 +5,7 @@
 baseUrl = "https://boldwinds.top"
 
 [_.globalMeta]
-title = "刘博文｜AI Infra / 分布式训练 / 推理优化 / 算子开发"
+title = "刘博文的个人空间"
 description = "刘博文的个人技术网站，记录训练系统、推理优化、算子实现与 AI 基础设施相关的文章、项目与论文。"
 longDescription = "Bowen Liu 的个人技术网站，聚焦分布式训练、推理优化、算子开发与 AI 基础设施工程实践，内容涵盖技术文章、项目记录与论文整理。"
 cardImage = "https://boldwinds.top/zaggonaut.png"
@@ -48,6 +48,7 @@ workExperience = "字节跳动｜AI芯片工具链，训练算子开发（2025.1
 
 [_.personal]
 name = "刘博文 / Bowen Liu"
+email = "whateverlbw@gmail.com"
 githubProfile = "https://github.com/BoldWinds"
 linkedinProfile = "https://www.linkedin.com/in/博文-刘-813056291"
 
