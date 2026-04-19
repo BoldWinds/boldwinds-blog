@@ -1,0 +1,76 @@
+---
+import type { AboutGameGroup } from "../../data/aboutGames";
+
+interface Props {
+  group: AboutGameGroup;
+}
+
+const { group } = Astro.props;
+const isFeatureList = group.layout === "feature-list";
+const isTwoUpGrid = group.layout === "two-up-grid";
+const isPosterGrid = group.layout === "poster-grid";
+---
+
+<section class="space-y-6">
+  <h2 class="text-2xl font-semibold sm:text-3xl">{group.title}</h2>
+
+  {
+    isFeatureList && (
+      <div class="space-y-6">
+        {group.games.map((game) => (
+          <article class="grid gap-5 rounded-2xl border border-black/10 p-4 sm:grid-cols-[180px_minmax(0,1fr)] sm:p-5 dark:border-white/10">
+            <img
+              src={game.poster}
+              alt={`${game.title} poster`}
+              class="h-full w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <div class="space-y-3">
+              <h3 class="text-xl font-semibold sm:text-2xl">{game.title}</h3>
+              <p class="text-sm leading-7 opacity-80 sm:text-base">{game.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    isTwoUpGrid && (
+      <div class="grid gap-6 md:grid-cols-2">
+        {group.games.map((game) => (
+          <article class="space-y-4 rounded-2xl border border-black/10 p-4 dark:border-white/10">
+            <img
+              src={game.poster}
+              alt={`${game.title} poster`}
+              class="aspect-[3/4] w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <div class="space-y-2">
+              <h3 class="text-lg font-semibold sm:text-xl">{game.title}</h3>
+              <p class="text-sm leading-7 opacity-80">{game.description}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    isPosterGrid && (
+      <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+        {group.games.map((game) => (
+          <article class="space-y-3">
+            <img
+              src={game.poster}
+              alt={`${game.title} poster`}
+              class="aspect-[3/4] w-full rounded-xl object-cover"
+              loading="lazy"
+            />
+            <h3 class="text-sm font-medium leading-6 sm:text-base">{game.title}</h3>
+          </article>
+        ))}
+      </div>
+    )
+  }
+</section>
