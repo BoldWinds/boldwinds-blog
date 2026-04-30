@@ -25,5 +25,7 @@ pnpm-debug.log*
 
 # local worktrees
 .worktrees/
+.claude/worktrees/
 
-pnpm-lock.yaml
+# package manager
+package-lock.json
