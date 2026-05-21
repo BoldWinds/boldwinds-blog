@@ -1,8 +1,6 @@
 ---
 
-import GameSection from "../components/about/GameSection.astro";
 import Section from "../components/common/Section.astro";
-import { aboutGameGroups } from "../data/aboutGames";
 import Layout from "../layouts/Layout.astro";
 import { getConfigurationCollection } from "../lib/utils";
 
@@ -12,13 +10,13 @@ const { data: config } = await getConfigurationCollection();
 <Layout>
   <Fragment slot="head">
     <title>关于 • {config.personal.name}</title>
-    <meta name="description" content="关于刘博文的个人介绍、生活兴趣与游戏收藏。" />
+    <meta name="description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta property="og:title" content={`关于 • ${config.personal.name}`} />
-    <meta property="og:description" content="关于刘博文的个人介绍、生活兴趣与游戏收藏。" />
+    <meta property="og:description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta property="og:url" content={`${config.site.baseUrl}/about`} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={`关于 • ${config.personal.name}`} />
-    <meta name="twitter:description" content="关于刘博文的个人介绍、生活兴趣与游戏收藏。" />
+    <meta name="twitter:description" content="关于刘博文的个人介绍与生活兴趣。" />
     <meta http-equiv="content-language" content="zh-CN" />
     <meta name="language" content="Chinese" />
     <link rel="canonical" href={`${config.site.baseUrl}/about`} />
@@ -35,20 +33,8 @@ const { data: config } = await getConfigurationCollection();
         <p>重度游戏爱好者，喜爱 MOBA、FPS、ARPG、ACT、Rougelike 类型游戏。</p>
         <p>whiskey / cocktail 品鉴者，尤其中意 Negroni。</p>
         <p>健身小白。</p>
+        <p>乐意尝试所有能提升自己的新事物。</p>
       </div>
     </div>
   </Section>
-
-  <section class="p-4 max-w-2xl mx-auto pb-20">
-    <div class="space-y-14">
-      <div class="space-y-3">
-        <h2 class="text-3xl font-semibold sm:text-4xl">游戏</h2>
-        <p class="text-sm leading-7 opacity-80 sm:text-base">
-          这里按不同方式整理了我最喜欢、投入时间最多，以及认真打 through 的游戏。
-        </p>
-      </div>
-
-      {aboutGameGroups.map((group) => <GameSection group={group} />)}
-    </div>
-  </section>
 </Layout>

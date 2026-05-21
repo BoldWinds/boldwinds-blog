@@ -1,0 +1,44 @@
+---
+
+import Section from "../components/common/Section.astro";
+import Layout from "../layouts/Layout.astro";
+import { getConfigurationCollection } from "../lib/utils";
+
+const { data: config } = await getConfigurationCollection();
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>酒吧 • {config.personal.name}</title>
+    <meta name="description" content="记录喝过的 whisky 与自己做过的 cocktail。" />
+    <meta property="og:title" content={`酒吧 • ${config.personal.name}`} />
+    <meta property="og:description" content="记录喝过的 whisky 与自己做过的 cocktail。" />
+    <meta property="og:url" content={`${config.site.baseUrl}/bar`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`酒吧 • ${config.personal.name}`} />
+    <meta name="twitter:description" content="记录喝过的 whisky 与自己做过的 cocktail。" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
+    <link rel="canonical" href={`${config.site.baseUrl}/bar`} />
+  </Fragment>
+
+  <Section class="py-4 my-8">
+    <div class="flex items-center gap-4 pt-8 pb-16">
+      <h1 class="font-display text-3xl leading-loose sm:text-4xl">酒吧</h1>
+    </div>
+
+    <div class="space-y-8 leading-8">
+      <p class="text-lg sm:text-xl">[WIP]这里会记录我喝过的 whisky 和自己做过的 cocktail。</p>
+
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold sm:text-3xl">Whisky</h2>
+        <p class="opacity-80">待补充。</p>
+      </div>
+
+      <div class="space-y-4">
+        <h2 class="text-2xl font-semibold sm:text-3xl">Cocktail</h2>
+        <p class="opacity-80">待补充。</p>
+      </div>
+    </div>
+  </Section>
+</Layout>

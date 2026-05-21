@@ -1,0 +1,38 @@
+---
+
+import GameSection from "../components/about/GameSection.astro";
+import { aboutGameGroups } from "../data/aboutGames";
+import Layout from "../layouts/Layout.astro";
+import { getConfigurationCollection } from "../lib/utils";
+
+const { data: config } = await getConfigurationCollection();
+---
+
+<Layout>
+  <Fragment slot="head">
+    <title>游戏 • {config.personal.name}</title>
+    <meta name="description" content="刘博文的游戏收藏与游玩记录。" />
+    <meta property="og:title" content={`游戏 • ${config.personal.name}`} />
+    <meta property="og:description" content="刘博文的游戏收藏与游玩记录。" />
+    <meta property="og:url" content={`${config.site.baseUrl}/games`} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`游戏 • ${config.personal.name}`} />
+    <meta name="twitter:description" content="刘博文的游戏收藏与游玩记录。" />
+    <meta http-equiv="content-language" content="zh-CN" />
+    <meta name="language" content="Chinese" />
+    <link rel="canonical" href={`${config.site.baseUrl}/games`} />
+  </Fragment>
+
+  <section class="p-4 max-w-2xl mx-auto pb-20">
+    <div class="space-y-14 pt-8">
+      <div class="space-y-3">
+        <h1 class="font-display text-3xl leading-loose sm:text-4xl">游戏</h1>
+        <p class="text-sm leading-7 opacity-80 sm:text-base">
+          [WIP]poster调整以及锐评
+        </p>
+      </div>
+
+      {aboutGameGroups.map((group) => <GameSection group={group} />)}
+    </div>
+  </section>
+</Layout>
